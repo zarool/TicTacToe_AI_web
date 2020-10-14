@@ -1,0 +1,14 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .tile {
+    font-size: 10vh;
+  }
+
+  .player {
+    font-size: 5vh;
+  }
+}

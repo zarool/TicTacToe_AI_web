@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.content {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3px;
+
+  margin: 10px;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 3px solid wheat;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 8vw;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.tile:hover {
+  background-color: #202020;
+}
+
+.player {
+  margin: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 3vw;
+}
+
+.reset {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: all 0.3s;
+
+  color: black;
+}
+
+.active {
+  background: #50380b;
+  opacity: 1;
+  z-index: 1;
+
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.reset-btn {
+  font-size: 30px;
+}

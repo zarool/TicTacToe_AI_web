@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="shortcut icon" href="#" />
+    <title>TicTacToe with AI</title>
+  </head>
+  <body>
+    <div class="reset"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">TicTacToe</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="true"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              target="blank"
+              href="https://thecodingtrain.com/CodingChallenges/149-tic-tac-toe.html"
+              >Helpful tutorials</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              target="blank"
+              href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/"
+              >About MiniMax</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="player">Player 1</div>
+      <div class="content"></div>
+      <div class="player">AI</div>
+    </div>
+
+    <script src="./app/page.js"></script>
+    <script src="./app/AI.js"></script>
+    <script src="./app/index.js"></script>
+    <script src="./app/game.js"></script>
+  </body>
+</html>
