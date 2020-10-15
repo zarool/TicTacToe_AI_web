@@ -1,3 +1,5 @@
+let fileName = window.location.pathname.split("/").pop();
+let opponent = document.querySelectorAll(".player")[1].innerHTML;
 let round = 0;
 let grid = [
   [null, null, null],
@@ -25,15 +27,21 @@ function makeMove(element, x, y) {
     element.innerHTML = players[round];
     grid[x][y] = round;
     checkWin();
-    // names[round].style.textDecoration = "none";
-    //round = 1 - round;
-    // names[round].style.textDecoration = "underline 4px solid wheat";
 
-    moves = makeAiMove();
-    console.log(moves);
-    grid[moves[0]][moves[1]] = 1;
-    tiles[moves[0]][moves[1]].innerHTML = players[1];
-    checkWin();
+    if (fileName == "player.html") {
+      names[round].style.textDecoration = "none";
+      round = 1 - round;
+      names[round].style.textDecoration = "underline 4px solid wheat";
+    } else if (
+      fileName == "ai.html" ||
+      fileName == "index.html" ||
+      fileName == ""
+    ) {
+      moves = makeAiMove();
+      grid[moves[0]][moves[1]] = 1;
+      tiles[moves[0]][moves[1]].innerHTML = players[1];
+      checkWin();
+    }
   }
 }
 
@@ -45,7 +53,7 @@ function checkWin() {
       grid[x][0] == grid[x][1] &&
       grid[x][1] == grid[x][2]
     ) {
-      win(grid[x][0] == 0 ? "Player" : "AI");
+      win(grid[x][0] == 0 ? "Player" : opponent);
       return true;
     }
   }
@@ -57,7 +65,7 @@ function checkWin() {
       grid[0][y] == grid[1][y] &&
       grid[1][y] == grid[2][y]
     ) {
-      win(grid[0][y] == 0 ? "Player" : "AI");
+      win(grid[0][y] == 0 ? "Player" : opponent);
       return true;
     }
   }
@@ -69,7 +77,7 @@ function checkWin() {
       grid[1][1] == grid[2][2]) ||
     (grid[2][0] != null && grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2])
   ) {
-    win(grid[1][1] == 0 ? "Player" : "AI");
+    win(grid[1][1] == 0 ? "Player" : opponent);
     return true;
   }
 
